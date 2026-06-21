@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coquette — Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/home.css" />
+  </head>
+  <body>
+    <main class="home-page">
+      <header class="home-header">
+        <div>
+          <p class="home-brand">Coquette</p>
+          <h1>Hola, <span id="user-name">invitada</span></h1>
+          <p class="home-subtitle">Has iniciado sesión correctamente.</p>
+        </div>
+        <button type="button" id="logout-btn" class="btn-logout">Cerrar sesión</button>
+      </header>
+
+      <section class="home-card">
+        <img src="/assets/coquette.png" alt="" width="96" height="101" />
+        <p>Tu catálogo vintage te espera. Esta es una vista provisional tras el login simulado.</p>
+      </section>
+    </main>
+
+    <script src="/js/home.js"></script>
+  </body>
+</html>
