@@ -18,44 +18,43 @@ body {
   background: var(--cream);
 }
 
-.home-page {
-  min-height: 100vh;
-  padding: 32px 24px;
-  max-width: 760px;
-  margin: 0 auto;
-  background:
-    radial-gradient(circle at 100% 0%, rgba(211, 212, 192, 0.5), transparent 40%),
-    var(--cream);
-}
+/* =========================
+   NAVBAR
+========================= */
 
-.home-header {
+.navbar {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 32px;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(243, 228, 201, 0.95);
+  border-bottom: 1px solid var(--sage);
+  box-shadow: 0 4px 12px rgba(10, 41, 71, 0.08);
 }
 
-.home-brand {
-  margin: 0 0 8px;
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--bronze);
-}
-
-.home-header h1 {
-  margin: 0 0 8px;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 600;
+  font-size: 1.4rem;
   color: var(--navy);
 }
 
-.home-subtitle {
-  margin: 0;
-  color: var(--text-soft);
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--bronze);
 }
 
 .btn-logout {
@@ -65,32 +64,132 @@ body {
   background: var(--cream);
   color: var(--navy);
   font: inherit;
-  font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .btn-logout:hover {
   background: var(--sage);
-  border-color: var(--bronze);
 }
 
-.home-card {
-  padding: 32px;
-  border-radius: 20px;
+/* =========================
+   MAIN
+========================= */
+
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-brand {
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.hero h1 {
+  margin: 12px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--navy);
+}
+
+.home-subtitle {
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* =========================
+   GRID DE CARDS
+========================= */
+
+/* =========================
+   GRID DE CARDS
+========================= */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  padding: 28px;
+  border-radius: var(--radius);
   background: rgba(243, 228, 201, 0.9);
   border: 1px solid var(--sage);
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
   text-align: center;
 }
 
-.home-card img {
-  margin-bottom: 16px;
-  filter: drop-shadow(0 8px 16px rgba(10, 41, 71, 0.18));
+.card:hover {
+  transform: translateY(-4px);
 }
 
-.home-card p {
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+}
+
+.card p {
   margin: 0;
   line-height: 1.6;
   color: var(--text-soft);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 60px;
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--sage);
+  color: var(--text-soft);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 }
