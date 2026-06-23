@@ -1,0 +1,14 @@
+:root {
+  --navy: #0a2947;
+  --cream: #f3e4c9;
+  --sage: #d3d4c0;
+  --bronze: #8b5e3c;
+
+  --text: #0a2947;
+  --text-soft: rgba(10, 41, 71, 0.65);
+  --white: #ffffff;
+  --shadow: 0 24px 60px rgba(10, 41, 71, 0.12);
+  --radius: 20px;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}

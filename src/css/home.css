@@ -1,0 +1,96 @@
+@import url("./variables.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--cream);
+}
+
+.home-page {
+  min-height: 100vh;
+  padding: 32px 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(211, 212, 192, 0.5), transparent 40%),
+    var(--cream);
+}
+
+.home-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.home-brand {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.home-header h1 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.home-subtitle {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.btn-logout {
+  padding: 10px 18px;
+  border: 1px solid var(--sage);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--navy);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: var(--sage);
+  border-color: var(--bronze);
+}
+
+.home-card {
+  padding: 32px;
+  border-radius: 20px;
+  background: rgba(243, 228, 201, 0.9);
+  border: 1px solid var(--sage);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.home-card img {
+  margin-bottom: 16px;
+  filter: drop-shadow(0 8px 16px rgba(10, 41, 71, 0.18));
+}
+
+.home-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
