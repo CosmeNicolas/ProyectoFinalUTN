@@ -149,17 +149,7 @@ body {
   color: var(--text-soft);
 }
 
-/* =========================
-   FOOTER
-========================= */
 
-.footer {
-  margin-top: 60px;
-  padding: 24px;
-  text-align: center;
-  border-top: 1px solid var(--sage);
-  color: var(--text-soft);
-}
 
 /* =========================
    RESPONSIVE
@@ -191,5 +181,96 @@ body {
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+}
+/* Footer */
+.site-footer {
+  background-color: #f9f3f0;
+  color: #4a2c2a;
+  padding: 2rem 1.5rem 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e0d6d0;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-col {
+  flex: 1 1 150px;
+}
+
+.footer-col h4 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0.8rem;
+  color: #b8867a;
+}
+
+.footer-col p, .footer-col li {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col a {
+  color: #5a4a46;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #b8867a;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0d6d0;
+  font-size: 0.8rem;
+  color: #9a8a86;
+}
+/*diseno rsponsable del footer */
+
+/*comp/pantaallas grandes */
+@media (max-width: 768px) {
+  .footer-container {
+    justify-content: center;  /* centra las columnas */
+    gap: 1.5rem;
+  }
+
+  .footer-col {
+    flex: 1 1 40%;           /* dos columnas por fila */
+    min-width: 120px;
+    text-align: center;      /* centra el texto */
+  }
+}
+
+/* cel */
+@media (max-width: 480px) {
+  .footer-col {
+    flex: 1 1 100%;          /* una columna por fila */
+    text-align: center;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* centra los enlaces */
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+    padding: 0.8rem 0.5rem;
   }
 }
