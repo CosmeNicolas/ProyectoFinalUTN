@@ -1,77 +1,144 @@
 <!doctype html>
+
 <html lang="es">
+
   <head>
+
     <meta charset="UTF-8" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Coquette — Inicio</title>
 
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+
+
     <link
+
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap"
+
       rel="stylesheet"
+
     />
 
+
+
     <link rel="stylesheet" href="/src/css/home.css" />
+
   </head>
 
+
+
   <body>
+
     <header class="navbar">
+
       <div class="navbar-logo">
+
         <img src="/assets/coquette.png" alt="Logo Coquette" width="45" />
+
         <span>Coquette Vintage</span>
+
       </div>
 
+
+
       <nav class="navbar-links">
+
         <a href="#">Inicio</a>
-        <a href="#">Productos</a>
-        <a href="#">Categorías</a>
+
+        <a href="/pages/admin.html">Admin</a>
+
+        <a href="#productos">Productos</a>
+
         <a href="#">Contacto</a>
+
       </nav>
 
+
+
       <button type="button" id="logout-btn" class="btn-logout">
+
         Cerrar sesión
+
       </button>
+
     </header>
 
+
+
     <main class="home-page">
+
       <section class="hero">
+
         <p class="home-brand">Coquette</p>
+
         <h1>Hola, <span id="user-name">invitada</span></h1>
+
         <p class="home-subtitle">
+
           Descubrí nuestra colección vintage exclusiva.
+
         </p>
+
       </section>
 
-      <section class="dashboard">
-        <article class="card">
-          <h3>🛍 Productos</h3>
+
+
+      <section id="productos" class="catalog-section">
+
+        <header class="catalog-header">
+
+          <h2>Productos</h2>
+
           <p>Explorá nuestro catálogo de prendas y accesorios.</p>
-        </article>
 
-        <article class="card">
-          <h3>✨ Categorías</h3>
-          <p>Encontrá estilos únicos para cada ocasión.</p>
-        </article>
+        </header>
 
-        <article class="card">
-          <h3>🎀 Novedades</h3>
-          <p>Conocé los últimos ingresos de la temporada.</p>
-        </article>
+        <div id="productos-grid" class="catalog-grid" aria-live="polite"></div>
 
-        <article class="card">
-          <h3>📞 Contacto</h3>
-          <p>Estamos disponibles para ayudarte en tu compra.</p>
-        </article>
       </section>
+
     </main>
 
+
+
     <footer class="footer">
+
       <p>© 2026 Coquette Vintage - Todos los derechos reservados</p>
+
     </footer>
 
-    <script src="/js/home.js"></script>
+
+
+    <dialog id="detalle-modal" class="detail-modal">
+
+      <div class="detail-modal-content">
+
+        <button type="button" id="detalle-cerrar" class="detail-modal-close" aria-label="Cerrar">
+
+          ×
+
+        </button>
+
+        <div id="detalle-contenido"></div>
+
+      </div>
+
+    </dialog>
+
+
+
+    <script type="module" src="/src/js/home.js"></script>
+
   </body>
+
 </html>
+

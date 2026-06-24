@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coquette — Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/css/admin.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="/pages/home.html" class="navbar-logo">
+        <img src="/assets/coquette.png" alt="Logo Coquette" width="45" />
+        <span>Coquette Vintage</span>
+      </a>
+
+      <nav class="navbar-links">
+        <a href="/pages/home.html">Inicio</a>
+        <a href="/pages/admin.html" class="is-active">Admin</a>
+      </nav>
+
+      <button type="button" id="logout-btn" class="btn-logout">
+        Cerrar sesión
+      </button>
+    </header>
+
+    <main class="admin-page">
+      <header class="admin-header">
+        <p class="admin-brand">Panel de control</p>
+        <h1>Administración</h1>
+        <p class="admin-subtitle">
+          Gestioná usuarios, productos y categorías desde un solo lugar.
+        </p>
+      </header>
+
+      <nav class="admin-tabs" role="tablist" aria-label="Secciones del admin">
+        <button
+          type="button"
+          class="admin-tab is-active"
+          data-tab="usuarios"
+          role="tab"
+          aria-selected="true"
+        >
+          Usuarios
+        </button>
+        <button
+          type="button"
+          class="admin-tab"
+          data-tab="productos"
+          role="tab"
+          aria-selected="false"
+        >
+          Productos
+        </button>
+        <button
+          type="button"
+          class="admin-tab"
+          data-tab="categorias"
+          role="tab"
+          aria-selected="false"
+        >
+          Categorías
+        </button>
+      </nav>
+
+      <div id="admin-alert" class="admin-alert" hidden role="alert"></div>
+
+      <section id="panel-usuarios" class="tab-panel is-active" role="tabpanel">
+        <div class="panel-toolbar">
+          <h2>Usuarios</h2>
+          <button type="button" class="btn-primary" id="btn-nuevo-usuario">
+            + Nuevo usuario
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-usuarios"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-productos" class="tab-panel" role="tabpanel" hidden>
+        <div class="panel-toolbar">
+          <h2>Productos</h2>
+          <button type="button" class="btn-primary" id="btn-nuevo-producto">
+            + Nuevo producto
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Talle</th>
+                <th>Estado</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-productos"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-categorias" class="tab-panel" role="tabpanel" hidden>
+        <div class="panel-toolbar">
+          <h2>Categorías</h2>
+          <button type="button" class="btn-primary" id="btn-nueva-categoria">
+            + Nueva categoría
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-categorias"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Coquette Vintage - Panel de administración</p>
+    </footer>
+
+    <dialog id="modal-admin" class="admin-modal">
+      <div class="modal-content">
+        <h3 id="modal-titulo"></h3>
+        <form id="modal-form" class="admin-form"></form>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="modal-cancelar">
+            Cancelar
+          </button>
+          <button type="submit" form="modal-form" class="btn-primary" id="modal-guardar">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/js/admin.js"></script>
+  </body>
+</html>
